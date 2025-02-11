@@ -14,7 +14,7 @@ import Card from "../Componenets/Card";
 import CircleChart from "../Componenets/CircleChart";
 import RecentActivity from "../Componenets/RecentActivity";
 import BarChart from "../Componenets/BarChart";
-import '../assets/css/dashboard.css';
+import '../assets/css/Dashboard.css';
 
 // Utility function for date formatting
 const formatRelativeTime = (timestamp) => {
