@@ -52,7 +52,7 @@ const SignIn = () => {
     }
 
     try {
-      const response = await fetch('https://admindashboard-xjwk.vercel.app/signin', {
+      const response = await fetch('https://admindashboard-xjwk.vercel.app', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
