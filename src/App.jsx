@@ -1,5 +1,5 @@
 import React from "react";
-import  { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import {
   createBrowserRouter,
   Navigate,
@@ -12,11 +12,34 @@ import Estimate from "./pages/Estimate";
 import Settings from "./pages/Settings";
 import Threshold from "./pages/Threshold"
 import Blueprint from "./pages/Blueprint";
+import SignIn from "./pages/SignIn";
+import SignUp from "./pages/SignUp";
 import Loader from "./Componenets/Loader";
+import ProtectedRoute from "./components/ProtectedRoute";
+
+// Auth check function
+const isAuthenticated = () => {
+  const token = localStorage.getItem('token');
+  const user = JSON.parse(localStorage.getItem('user') || '{}');
+  return token && user.id;
+};
+
 const router = createBrowserRouter([
   {
+    path: "/signin",
+    element: <SignIn />,
+  },
+  {
+    path: "/signup",
+    element: <SignUp />,
+  },
+  {
     path: "/",
-    element: <Layout />,
+    element: (
+      <ProtectedRoute>
+        <Layout />
+      </ProtectedRoute>
+    ),
     children: [
       {
         path: "/",
@@ -29,8 +52,8 @@ const router = createBrowserRouter([
       {
         path:"/Contract",
         element:<Contracts/>
-      }
-      , {
+      },
+      {
         path:"/Estimate",
         element: <Estimate/>
       },
@@ -38,24 +61,20 @@ const router = createBrowserRouter([
         path:"/Settings",
         element: <Settings/>
       },
-     { path:"/Threshold"
-      ,
-      element: <Threshold/>
-     }
+      { 
+        path:"/Threshold",
+        element: <Threshold/>
+      }
     ],
-  }
-  
+  },
+  {
+    path: "*",
+    element: <Navigate to="/" replace />,
+  },
 ]);
 
-
 function App() {
-
-
-  return (
-    <>
-      <RouterProvider router={router} />
-    </>
-  );
+  return <RouterProvider router={router} />;
 }
 
 export default App;

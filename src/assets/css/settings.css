@@ -1,0 +1,89 @@
+.settings-container {
+    padding: 2rem;
+}
+
+.alert {
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border-radius: 8px;
+    font-weight: 500;
+}
+
+.alert-success {
+    background-color: #D1FAE5;
+    color: #065F46;
+    border: 1px solid #A7F3D0;
+}
+
+.alert-danger {
+    background-color: #FEE2E2;
+    color: #991B1B;
+    border: 1px solid #FECACA;
+}
+
+.password-input {
+    position: relative;
+    margin-bottom: 1rem;
+}
+
+.password-input input {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    border: 1px solid #E2E8F0;
+    border-radius: 8px;
+    font-size: 0.95rem;
+    transition: all 0.2s;
+}
+
+.password-input input:focus {
+    outline: none;
+    border-color: #4318FF;
+    box-shadow: 0 0 0 3px rgba(67, 24, 255, 0.1);
+}
+
+.password-input input:disabled {
+    background-color: #F8FAFC;
+    cursor: not-allowed;
+}
+
+.toggle-password {
+    position: absolute;
+    right: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    color: #94A3B8;
+    transition: color 0.2s;
+}
+
+.toggle-password:hover {
+    color: #4318FF;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+    color: #2B3674;
+}
+
+button[type="submit"] {
+    background: linear-gradient(45deg, #4318FF, #9f87ff);
+    color: white;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 8px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+button[type="submit"]:hover:not(:disabled) {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(67, 24, 255, 0.15);
+}
+
+button[type="submit"]:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+}
