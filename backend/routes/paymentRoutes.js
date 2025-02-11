@@ -9,4 +9,10 @@ router.post('/create-payment-intent', auth, paymentController.createPaymentInten
 // Confirm payment (requires authentication)
 router.post('/confirm-payment', auth, paymentController.confirmPayment);
 
+// Process refund (requires authentication)
+router.post('/refund', auth, paymentController.refundPayment);
+
+// Get payment history (requires authentication)
+router.get('/history', auth, paymentController.getPaymentHistory);
+
 module.exports = router;

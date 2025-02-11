@@ -163,6 +163,19 @@ const Layout = () => {
                     <span>Setting</span>
                   </NavLink>
                 </li>
+                <li>
+                  <NavLink
+                    className=""
+                    style={({ isActive }) => ({
+                      textDecoration: "underline",
+                      color: isActive ? "white" : "#737791", // White if active, default otherwise
+                    })}
+                    to="/payment"
+                  >
+                    <i class="fa-solid fa-credit-card"></i>
+                    <span>Payment</span>
+                  </NavLink>
+                </li>
               </ul>
             </div>
           </div>
