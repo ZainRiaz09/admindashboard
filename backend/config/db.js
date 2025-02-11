@@ -3,7 +3,7 @@ const dotenv = require('dotenv');
 
 dotenv.config();
 
-// Enhanced error handling
+// Enhancederror handling
 const initOptions = {
     error: (error, e) => {
         if (e.cn) {
