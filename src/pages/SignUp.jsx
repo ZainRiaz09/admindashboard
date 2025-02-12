@@ -7,9 +7,7 @@ const SignUp = () => {
     fullName: '',
     email: '',
     password: '',
-    confirmPassword: '',
-    phoneNumber: '',
-    companyName: ''
+    confirmPassword: ''
   });
   const [error, setError] = useState('');
   const [isLoading, setIsLoading] = useState(false);
@@ -62,9 +60,7 @@ const SignUp = () => {
         body: JSON.stringify({
           fullName: formData.fullName,
           email: formData.email,
-          password: formData.password,
-          phoneNumber: formData.phoneNumber,
-          companyName: formData.companyName
+          password: formData.password
         }),
       });
 
@@ -130,7 +126,7 @@ const SignUp = () => {
             />
           </div>
           
-          <div className="form-group">
+          {/* <div className="form-group">
             <label htmlFor="phoneNumber">Phone Number (Optional)</label>
             <input
               type="tel"
@@ -154,7 +150,7 @@ const SignUp = () => {
               placeholder="Enter your company name"
               disabled={isLoading}
             />
-          </div>
+          </div> */}
           
           <div className="form-group">
             <label htmlFor="password">Password</label>
